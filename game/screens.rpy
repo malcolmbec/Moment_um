@@ -253,7 +253,7 @@ style quick_button_text:
 ################################################################################
 ## Navigation Screen
 ################################################################################
-## This screen is included in the main and game menus, and provides navigation
+## This screen is included in the main menu, and provides navigation
 ## to other menus, and to start the game.
 
 screen navigation():
@@ -344,6 +344,52 @@ style main_menu_version:
     properties gui.text_properties("version")
 
 ################################################################################
+## Game Navigation Screen
+################################################################################
+## This screen is included in the game menu, and provides navigation
+## to other menus.
+
+screen game_navigation():
+    vbox:
+        style_prefix "game_navigation"
+        xpos gui.game_navigation_xpos
+        yalign 0.5
+        spacing gui.game_navigation_spacing
+
+        if main_menu:
+            textbutton _("Start") action Start()
+        else:
+            textbutton _("History") action ShowMenu("history")
+            textbutton _("Save") action ShowMenu("save")
+        textbutton _("Load") action ShowMenu("load")
+        textbutton _("Preferences") action ShowMenu("preferences")
+
+        if _in_replay:
+            textbutton _("End Replay") action EndReplay(confirm=True)
+        elif not main_menu:
+            textbutton _("Main Menu") action MainMenu()
+        textbutton _("About") action ShowMenu("about")
+
+        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+            ## Help isn't necessary or relevant to mobile devices.
+            textbutton _("Help") action ShowMenu("help")
+
+        if renpy.variant("pc"):
+            ## The quit button is banned on iOS and unnecessary on Android and
+            ## Web.
+            textbutton _("Quit") action Quit(confirm=not main_menu)
+
+style game_navigation_button is gui_button
+style game_navigation_button_text is gui_button_text
+
+style game_navigation_button:
+    size_group "game_navigation"
+    properties gui.button_properties("game_navigation_button")
+
+style game_navigation_button_text:
+    properties gui.button_text_properties("game_navigation_button")
+
+################################################################################
 ## Game Menu Screen
 ################################################################################
 ## This lays out the basic common structure of a game menu screen. It's called
@@ -392,7 +438,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
                 else:
                     transclude
 
-    use navigation
+    use game_navigation
 
     textbutton _("Return"):
         style "return_button"
@@ -450,7 +496,7 @@ style game_menu_label_text:
     yalign 0.5
 
 style return_button:
-    xpos gui.navigation_xpos
+    xpos gui.game_navigation_xpos
     yalign 1.0
     yoffset -45
 

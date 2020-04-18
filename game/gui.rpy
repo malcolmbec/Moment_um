@@ -197,6 +197,7 @@ define gui.quick_button_text_selected_color = gui.accent_color
 ## navigation button.
 
 # define gui.navigation_button_width = 250
+# define gui.game_navigation_button_width = 250
 
 ################################################################################
 ## Choice Buttons
@@ -247,7 +248,8 @@ define gui.file_slot_rows = 2
 
 ## The position of the left side of the navigation buttons, relative to the left
 ## side of the screen.
-define gui.navigation_xpos = 50
+define gui.navigation_xpos = 350
+define gui.game_navigation_xpos = 50
 
 ## The vertical position of the skip indicator.
 define gui.skip_ypos = 15
@@ -260,6 +262,7 @@ define gui.choice_spacing = 33
 
 ## Buttons in the navigation section of the main and game menus.
 define gui.navigation_spacing = 6
+define gui.game_navigation_spacing = 6
 
 ## Controls the amount of spacing between preferences.
 define gui.pref_spacing = 15
@@ -444,6 +447,7 @@ init python:
         gui.choice_button_width = 1860
 
         gui.navigation_spacing = 30
+        gui.game_navigation_spacing = 30
         gui.pref_button_spacing = 15
 
         gui.history_height = 285
