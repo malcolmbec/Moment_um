@@ -1,7 +1,7 @@
 label dialogue:
     scene bg bar with dissolve
     show cat sad_animated at behind_bar_left_cat
-    show smol
+    show smol normal at behind_bar_right_smol
     show bar
 
     "You walk up to the mouse and attempt to greet them."
@@ -34,20 +34,33 @@ label dialogue:
         s"Really, you should just leave."
         jump end1
     label opt1_2:
+
+        show smol anger_animated at behind_bar_right_smol_anger
+
         c"Do you have any drink recommendations?"
         s"Why do you want a drink recommendation from me?"
         c"I thought maybe you came here often."
+
+
         s"Because I’m a mouse?!"
         c"Oh, um, no! I just meant…"
         jump end1
     label opt1_3:
         c"I’m trying to make friends."
+
+        show smol anger_animated at behind_bar_right_smol_anger
+
         s"But you’re a cat,{w} why would you try to make friends here?{w} Seems like you don’t belong here."
         c"Erm, I think maybe we could all learn to be friends?"
         s"Or maybe you’re hiding something!"
+
+        show cat shock
+
         c"Uh, what?{w} No!"
         jump end1
     label end1:
+
+    show cat blink
 
     "Seems like befriending this mouse will be harder than you expected.{w} What should you say next?"
 
@@ -73,16 +86,27 @@ label dialogue:
                 jump end2
     label opt2_2:
 
+        show cat sad
 
         c"I’ve never been here before, but they seem busy."
         s"You seem too interested in the patrons."
+
+        show cat suprise
+
         c"What, no, why?"
+
+        show cat sad
+
         s"You’re a cat, maybe you’re up to something."
         c"I’m just trying to make some friends..."
         jump end2
     label end2:
 
+    show cat ugh
+
     "Tensions are high, let’s change the topic all together."
+
+    show cat sad
 
     c"Do you drink a lot of coffee?"
 
@@ -111,14 +135,26 @@ label dialogue:
             jump opt3_3
     label opt3_1:
         c"I’ll try the black coffee then."
+
+        show smol meh at behind_bar_right_smol_anger
+
         s"Wait, seriously? You’ll try even though you think it’s bitter?"
         c"Hm. Maybe I should suggest something you’d definitely enjoy then."
-        "Seems the small mouse might be opening up! Maybe you can be friends after all."
+        "Seems the small mouse might be opening up!{w} Maybe you can be friends after all."
         jump end3
     label opt3_2:
         c"I’m not really a coffee drinker myself."
+
+        show smol pfff at behind_bar_right_smol_anger
+
         s"Why would you come here then?"
+
+        show cat ugh
+
         c"Well I mean, um, most cafes have other things too."
+
+        show smol anger_animated at behind_bar_right_smol_anger
+
         s"That makes no sense, it’s a coffee shop, if you’re not going to drink coffee, you should leave."
         ## Submenu 3
         menu:

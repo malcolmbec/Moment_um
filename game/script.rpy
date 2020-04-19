@@ -1,12 +1,4 @@
 ################################################################################
-## Stats
-################################################################################
-
-python:
-    smol_friend = False
-    ratdee_friend = False
-
-################################################################################
 ## Characters
 ################################################################################
 
@@ -31,7 +23,7 @@ image cat sad_animated:
 image cat happy_animated:
     "cat happy.png"
     pause 1.0
-    "cat happy blink.png"
+    "cat happy_blink.png"
     pause 1.0
     repeat
 
@@ -41,7 +33,7 @@ image cat glance_animated:
     "cat glance.png"
 
 image barista blink_animated:
-    "barista eye open.png"
+    "barista eye_open.png"
     pause 1.0
     "barista blink.png"
     pause 0.3
@@ -50,21 +42,21 @@ image barista blink_animated:
 image barista whoops_animated:
     "barista whoops.png"
     pause 1.0
-    "barista whoops blink.png"
+    "barista whoops_blink.png"
     pause 0.3
     repeat
 
 image ratdee animated:
-    "rat dee.png"
+    "ratdee normal.png"
     pause 2.0
-    "rat dee blink.png"
+    "ratdee blink.png"
     pause 0.3
     repeat
 
 image ratdee gameless_animated:
-    "rat dee gameless.png"
+    "ratdee gameless.png"
     pause 1.0
-    "rat dee gameless blink.png"
+    "ratdee gameless_blink.png"
     pause 0.3
     repeat
 
@@ -76,16 +68,16 @@ image smol anger_animated:
     repeat
 
 image smol pull_animated:
-    "smol pull normal.png"
+    "smol pull_normal.png"
     pause 1.5
-    "smol pull blink.png"
+    "smol pull_blink.png"
     pause 0.2
     repeat
 
 image smol pull anger_animated:
-    "smol pull anger.png"
+    "smol pull_anger.png"
     pause 1.5
-    "smol pull blink.png"
+    "smol pull_blink.png"
     pause 0.2
     repeat
 
@@ -147,6 +139,10 @@ transform rightish:
 
 # The game starts here.
 label start:
+    python:
+        smol_friend = False
+        ratdee_friend = False
+
     scene bg bar
     show cat glance at behind_bar_left_cat
     show bar
@@ -167,12 +163,11 @@ label start:
     b"I see.{w} Well, some might think you’re out of place here,{w} but I say the more the merrier!"
     b"Don’t let others discourage you.{w} With some perseverance you’ll be able to befriend everyone here!"
 
-    show barista friendly at right
 
     b"In the meantime, if you want,{w} why don’t you start with getting some menu recommendations from our regulars?"
     b"Normally I would help you in this area,{w} but since you want to make friends this a good starting point!"
 
-    show barista eye open at right
+    show barista friendly at right
 
     b"Let me know how things go.{w} I’ll be cheering for you!"
 
