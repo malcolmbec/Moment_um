@@ -2,8 +2,9 @@
 ## Stats
 ################################################################################
 
-$ smol_friend = False
-$ ratdee_friend = False
+python:
+    smol_friend = False
+    ratdee_friend = False
 
 ################################################################################
 ## Characters
@@ -20,68 +21,68 @@ define s = Character("Smol Mouse", who_color=cosmic_cobalt)
 ## Animations
 ################################################################################
 
-image cat sad animated:
+image cat sad_animated:
     "cat sad.png"
     pause 2.0
     "cat blink.png"
     pause 0.3
     repeat
 
-image cat happy animated:
+image cat happy_animated:
     "cat happy.png"
     pause 1.0
     "cat happy blink.png"
     pause 1.0
     repeat
 
-image cat glance animated:
+image cat glance_animated:
     "cat nani.png"
     pause 1.0
     "cat glance.png"
 
-image barista blink animated:
+image barista blink_animated:
     "barista eye open.png"
     pause 1.0
     "barista blink.png"
     pause 0.3
     repeat
 
-image barista whoops animated:
+image barista whoops_animated:
     "barista whoops.png"
     pause 1.0
     "barista whoops blink.png"
     pause 0.3
     repeat
 
-image rat dee animated:
+image ratdee animated:
     "rat dee.png"
     pause 2.0
     "rat dee blink.png"
     pause 0.3
     repeat
 
-image rat dee gameless animated:
+image ratdee gameless_animated:
     "rat dee gameless.png"
     pause 1.0
     "rat dee gameless blink.png"
     pause 0.3
     repeat
 
-image smol anger animated:
+image smol anger_animated:
     "smol anger.png"
     pause 2.0
     "smol pfff.png"
     pause 0.2
     repeat
 
-image smol pull animated:
+image smol pull_animated:
     "smol pull normal.png"
     pause 1.5
     "smol pull blink.png"
     pause 0.2
     repeat
 
-image smol pull anger animated:
+image smol pull anger_animated:
     "smol pull anger.png"
     pause 1.5
     "smol pull blink.png"
@@ -154,15 +155,25 @@ label start:
         name = renpy.input(_("What's your name?"))
         name = name.strip() or __("Cat")
 
+    show cat sad at behind_bar_left_cat
     show bar
     show barista friendly at right
 
     b"Hello [name]! Welcome to the cafe, can I help you?"
     c"..."
+
+    show barista blink_animated at right
+
     b"I see.{w} Well, some might think you’re out of place here,{w} but I say the more the merrier!"
     b"Don’t let others discourage you.{w} With some perseverance you’ll be able to befriend everyone here!"
+
+    show barista friendly at right
+
     b"In the meantime, if you want,{w} why don’t you start with getting some menu recommendations from our regulars?"
     b"Normally I would help you in this area,{w} but since you want to make friends this a good starting point!"
+
+    show barista eye open at right
+
     b"Let me know how things go.{w} I’ll be cheering for you!"
 
     jump dialogue

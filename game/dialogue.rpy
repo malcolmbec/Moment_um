@@ -1,14 +1,19 @@
 label dialogue:
     scene bg bar with dissolve
-    show cat sad at behind_bar_left_cat
-    show smol anger animated at behind_bar_right_smol_anger
+    show cat sad_animated at behind_bar_left_cat
+    show smol
     show bar
 
     "You walk up to the mouse and attempt to greet them."
     s"You’re a cat!"
+
+    show smol anger at behind_bar_right_smol_anger
+
     s"Why is a cat here?"
 
     ## Menu 1
+    show cat sad
+
     menu:
         "\"Well, I thought it seemed like a cool shop.\"":
             jump opt1_1
@@ -17,9 +22,14 @@ label dialogue:
         "\"I’m trying to make friends.\" ":
             jump opt1_3
     label opt1_1:
+
+        show smol anger_animated
+
         c"Well, I thought it seemed like a cool shop."
         s"Seems pretty fishy."
         c"I don’t know what you mean."
+
+
         s"Well… you’re a cat,{w} and most of us are mice."
         s"Really, you should just leave."
         jump end1
@@ -62,6 +72,8 @@ label dialogue:
             "Maybe it’s best if I talk to someone else...":
                 jump end2
     label opt2_2:
+
+
         c"I’ve never been here before, but they seem busy."
         s"You seem too interested in the patrons."
         c"What, no, why?"
@@ -73,8 +85,17 @@ label dialogue:
     "Tensions are high, let’s change the topic all together."
 
     c"Do you drink a lot of coffee?"
+
+    show smol meh at behind_bar_right_smol_anger
+
     s"I come here for black coffee a lot"
+
+    show cat nani
+
     c"Um, isn’t that bitter?"
+
+    show cat sad
+
     s"The only thing bitter around here is me."
     c"..."
 
@@ -107,11 +128,20 @@ label dialogue:
                 jump end3
     label opt3_3:
         c"Are you okay?"
+
+        show smol pull_animated at behind_bar_right_smol_pull
+
         s"You’re right, I don’t even like coffee."
         c"Why are you drinking it then?"
         s"Because I thought the caffeine would help me."
+
+        show cat wink
+
         c"Let’s try something new together instead."
         s"I can’t believe you’re being nice to me after all the mean things I’ve said."
+
+        show cat happy
+
         "See, all the mouse needed was a friend."
         python:
             smol_friend = True
