@@ -4,10 +4,10 @@
 
 $ name = "Cat"
 
-define c = Character("[name]", who_color=dark_venetian)
+define c = Character("[name]", who_color=plum)
 define b = Character("Barista", who_color=dark_venetian)
-define r = Character("Rat Dee", who_color=dark_venetian)
-define s = Character("Smol Mouse", who_color=dark_venetian)
+define r = Character("Rat Dee", who_color=jazzberry_jam)
+define s = Character("Smol Mouse", who_color=cosmic_cobalt)
 
 ################################################################################
 ## Animations
@@ -64,13 +64,21 @@ image rat dee gameless animated:
 ## Positions
 ################################################################################
 
-transform behind_bar_left_smol:
+transform behind_bar_left_smol_anger:
     xalign 0.1
     yalign 0.65
 
-transform behind_bar_right_smol:
+transform behind_bar_right_smol_anger:
     xalign 0.9
     yalign 0.65
+
+transform behind_bar_left_smol:
+    xalign 0.1
+    yalign 0.62
+
+transform behind_bar_right_smol:
+    xalign 0.9
+    yalign 0.62
 
 transform behind_bar_left_rat:
     xalign 0.1

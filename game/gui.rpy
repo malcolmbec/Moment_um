@@ -20,6 +20,9 @@ init python:
 
 ## Crayola Colors ##############################################################
 define dark_venetian = '#b33b24'
+define plum = '#8e3179'
+define jazzberry_jam = '#a50B5e'
+define cosmic_cobalt = '#2e2d88'
 define gold_fusion = '#85754e'
 define gold_fusion_light = '#c8ae6e'
 define gold_fusion_soft = '#e5d1a1'
