@@ -172,6 +172,9 @@ define gui.button_text_font = gui.interface_text_font
 ## The size of the text used by the button.
 define gui.button_text_size = gui.interface_text_size
 
+## The size of the text used by the button on the navigation menu.
+define gui.navigation_button_text_size = 40
+
 ## The color of button text in various states.
 define gui.button_text_idle_color = gui.idle_color
 define gui.button_text_hover_color = gui.hover_color
@@ -255,7 +258,7 @@ define gui.file_slot_rows = 2
 
 ## The position of the left side of the navigation buttons, relative to the left
 ## side of the screen.
-define gui.navigation_xpos = 350
+define gui.navigation_xpos = 375
 define gui.game_navigation_xpos = 50
 
 ## The vertical position of the skip indicator.
