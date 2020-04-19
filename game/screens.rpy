@@ -260,7 +260,7 @@ screen navigation():
     vbox:
         style_prefix "navigation"
         xpos gui.navigation_xpos
-        yalign 0.5
+        yalign 0.6
         spacing gui.navigation_spacing
 
         if main_menu:
@@ -490,7 +490,7 @@ style game_menu_label:
     ysize 180
 
 style game_menu_label_text:
-    size gui.title_text_size
+    size gui.menu_title_text_size
     color gui.accent_color
     yalign 0.5
 

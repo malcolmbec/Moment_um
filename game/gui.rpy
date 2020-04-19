@@ -24,6 +24,9 @@ define gold_fusion = '#85754e'
 define gold_fusion_light = '#c8ae6e'
 define gold_fusion_soft = '#e5d1a1'
 
+## An accent color used to label title text.
+define gui.title_text_color = gold_fusion_soft
+
 ## An accent color used throughout the interface to label and highlight text.
 define gui.accent_color = gold_fusion_light
 
@@ -56,21 +59,24 @@ define gui.interface_text_color = '#404040'
 ################################################################################
 ## Fonts and Font Sizes
 ################################################################################
-
+# DejaVuSans.ttf
 ## The font used for in-game text.
-define gui.text_font = "DejaVuSans.ttf"
+define gui.text_font = "fonts/Quicksand.ttf"
+
+## The font used for title text.
+define gui.title_text_font = "fonts/DancingScript-Bold.ttf"
 
 ## The font used for character names.
-define gui.name_text_font = "DejaVuSans.ttf"
+define gui.name_text_font = "fonts/DancingScript-Bold.ttf"
 
 ## The font used for out-of-game text.
-define gui.interface_text_font = "DejaVuSans.ttf"
+define gui.interface_text_font = "fonts/Quicksand.ttf"
 
 ## The size of normal dialogue text.
 define gui.text_size = 33
 
 ## The size of character names.
-define gui.name_text_size = 45
+define gui.name_text_size = 55
 
 ## The size of text in the game's user interface.
 define gui.interface_text_size = 33
@@ -82,7 +88,10 @@ define gui.label_text_size = 36
 define gui.notify_text_size = 24
 
 ## The size of the game's title.
-define gui.title_text_size = 75
+define gui.title_text_size = 175
+
+## The size of the game menu titles.
+define gui.menu_title_text_size = 75
 
 ################################################################################
 ## Main and Game Menus
@@ -108,7 +117,7 @@ define gui.textbox_yalign = 1.0
 ## The placement of the speaking character's name, relative to the textbox.
 ## These can be a whole number of pixels from the left or top, or 0.5 to center.
 define gui.name_xpos = 360
-define gui.name_ypos = 0
+define gui.name_ypos = 30
 
 ## The horizontal alignment of the character's name. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
@@ -131,7 +140,7 @@ define gui.namebox_tile = False
 ## number of pixels relative to the left or top side of the textbox, or 0.5 to
 ## center.
 define gui.dialogue_xpos = 402
-define gui.dialogue_ypos = 75
+define gui.dialogue_ypos = 0.5
 
 ## The maximum width of dialogue text, in pixels.
 define gui.dialogue_width = 1116
