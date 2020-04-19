@@ -43,7 +43,7 @@ define config.has_voice = False
 ## Uncomment the following line to set an audio file that will be played while
 ## the player is at the main menu. This file will continue playing into the
 ## game, until it is stopped or another file is played.
-define config.main_menu_music = "audio/temp-menu-music.mp3"
+define config.main_menu_music = "audio/title-theme.mp3"
 
 ################################################################################
 ## Transitions

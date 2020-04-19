@@ -43,6 +43,9 @@ label dialogue:
 
 
         s"Because I’m a mouse?!"
+
+        show cat nani at behind_bar_left_cat
+
         c"Oh, um, no! I just meant…"
         jump end1
     label opt1_3:
@@ -71,12 +74,18 @@ label dialogue:
         "Ask about the usual regulars at the cafe.":
             jump opt2_2
     label opt2_1:
+
+        show cat sad
+
         c"Are you here often?"
         s"What’s it to you?"
         c"You seem like you know this place well."
         s"So?"
         c"Uh…"
         s"Leave before I fight you!"
+
+        show cat ugh
+
         "Oh that’s not good, maybe you should try something else."
         ## Submenu 2
         menu:
@@ -134,9 +143,12 @@ label dialogue:
         "\"Are you okay?\"":
             jump opt3_3
     label opt3_1:
+
+        show cat sad at behind_bar_left_cat
+
         c"I’ll try the black coffee then."
 
-        show smol meh at behind_bar_right_smol_anger
+        show smol meh at behind_bar_right_smol_pull
 
         s"Wait, seriously? You’ll try even though you think it’s bitter?"
         c"Hm. Maybe I should suggest something you’d definitely enjoy then."
@@ -186,7 +198,17 @@ label dialogue:
 
     if smol_friend:
         "You befriended Smol Mouse!"
+
     else:
+        show cat ugh at behind_bar_left_cat
+
         "You did not make friends with Smol Mouse. :("
+
+    scene bg bar
+    show ratdee normal at behind_bar_right_rat
+    show bar
+
+    pause 3.0
+    r"That's rough, buddy."
 
     jump endscene
