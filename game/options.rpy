@@ -114,7 +114,7 @@ define config.save_directory = "Moment_um-1587231671"
 ################################################################################
 
 ## The icon displayed on the taskbar or dock.
-define config.window_icon = "images/cat sad.png"
+define config.window_icon = "images/icon bg.png"
 
 ################################################################################
 ## Build Configuration
