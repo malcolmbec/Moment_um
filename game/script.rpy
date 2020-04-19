@@ -5,7 +5,7 @@
 $ name = "Cat"
 
 define c = Character("[name]", who_color=dark_venetian)
-define b = Character("Bartender", who_color=dark_venetian)
+define b = Character("Barista", who_color=dark_venetian)
 define r = Character("Rat Dee", who_color=dark_venetian)
 define s = Character("Smol Mouse", who_color=dark_venetian)
 
