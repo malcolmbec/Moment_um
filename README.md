@@ -10,4 +10,4 @@ Programming: Becca Malcolm
 
 This was my first experience using the Ren'Py visual novel engine: https://www.renpy.org/ 
 
-Link to the distributions: https://rebkgames.itch.io/momentum
+Link to the game distributions: https://rebkgames.itch.io/momentum
