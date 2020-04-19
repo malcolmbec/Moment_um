@@ -60,23 +60,52 @@ image rat dee gameless animated:
     pause 0.3
     repeat
 
+image smol anger animated:
+    "smol anger.png"
+    pause 2.0
+    "smol pfff.png"
+    pause 0.2
+    repeat
+
+image smol pull animated:
+    "smol pull normal.png"
+    pause 1.5
+    "smol pull blink.png"
+    pause 0.2
+    repeat
+
+image smol pull anger animated:
+    "smol pull anger.png"
+    pause 1.5
+    "smol pull blink.png"
+    pause 0.2
+    repeat
+
 ################################################################################
 ## Positions
 ################################################################################
 
-transform behind_bar_left_smol_anger:
+transform behind_bar_left_smol:
     xalign 0.1
     yalign 0.65
 
-transform behind_bar_right_smol_anger:
+transform behind_bar_right_smol:
     xalign 0.9
     yalign 0.65
 
-transform behind_bar_left_smol:
+transform behind_bar_left_smol_anger:
+    xalign 0.1
+    yalign 0.67
+
+transform behind_bar_right_smol_anger:
+    xalign 0.9
+    yalign 0.67
+
+transform behind_bar_left_smol_pull:
     xalign 0.1
     yalign 0.62
 
-transform behind_bar_right_smol:
+transform behind_bar_right_smol_pull:
     xalign 0.9
     yalign 0.62
 

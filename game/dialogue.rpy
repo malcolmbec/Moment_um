@@ -1,7 +1,7 @@
 label dialogue:
     scene bg bar
     show cat sad at behind_bar_left_cat
-    show smol meh at behind_bar_right_smol
+    show smol anger animated at behind_bar_right_smol_anger
     show bar
 
     s"Now we have some options!"
