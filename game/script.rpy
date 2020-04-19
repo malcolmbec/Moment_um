@@ -11,8 +11,20 @@ define r = Character("Rat Dee", who_color=dark_venetian)
 ## Positions/Animations
 ################################################################################
 
+transform behind_bar_left_smol:
+    xalign 0.1
+    yalign 0.65
+
+transform behind_bar_right_smol:
+    xalign 0.9
+    yalign 0.65
+
 transform behind_bar_left:
     xalign 0.1
+    yalign 0.4
+
+transform behind_bar_right:
+    xalign 0.9
     yalign 0.4
 
 transform rightish:
@@ -27,8 +39,8 @@ transform rightish:
 label start:
     scene bg bar
     show cat sad at behind_bar_left
+    show rat dee at behind_bar_right
     show bar
-    show bartender friendly at rightish
 
     b"Welcome to <Bar Name>!"
 
