@@ -19,11 +19,15 @@ define config.version = "1.3"
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
 define gui.about = _p("""
-Created for VGMC Jam 2020!\n
-Writing: Bec Raison\n
-Art: Gemhunter178\n
-Music: Elijah Green\n
-Programming: Becca Malcolm
+    Created for VGMC Jam 2020!
+
+    Writing: Bec Raison
+
+    Art: Gemhunter178
+
+    Music: Elijah Green
+
+    Programming: Becca Malcolm
 """)
 
 ## A short name for the game used for executables and directories in the built
