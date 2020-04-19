@@ -1,4 +1,6 @@
 label dialogue:
+    ## Scene 1 #################################################################
+    play music "audio/smol_theme.mp3" fadeout 1.0 fadein 1.0
     scene bg bar with dissolve
     show cat sad_animated at behind_bar_left_cat
     show smol normal at behind_bar_right_smol
@@ -6,9 +8,7 @@ label dialogue:
 
     "You walk up to the mouse and attempt to greet them."
     s"You’re a cat!"
-
     show smol anger at behind_bar_right_smol_anger
-
     s"Why is a cat here?"
 
     ## Menu 1
@@ -64,7 +64,6 @@ label dialogue:
     label end1:
 
     show cat blink
-
     "Seems like befriending this mouse will be harder than you expected.{w} What should you say next?"
 
     ## Menu 2
@@ -112,26 +111,16 @@ label dialogue:
     label end2:
 
     show cat ugh
-
     "Tensions are high, let’s change the topic all together."
-
     show cat sad
-
     c"Do you drink a lot of coffee?"
-
     show smol meh at behind_bar_right_smol_anger
-
     s"I come here for black coffee a lot"
-
     show cat nani
-
     c"Um, isn’t that bitter?"
-
     show cat sad
-
     s"The only thing bitter around here is me."
     c"..."
-
     "Hm, well I guess they’re straight forward at least.{w} How should you respond?"
 
     ## Menu 3
@@ -198,17 +187,147 @@ label dialogue:
 
     if smol_friend:
         "You befriended Smol Mouse!"
-
     else:
         show cat ugh at behind_bar_left_cat
-
         "You did not make friends with Smol Mouse. :("
 
-    scene bg bar
+    ## Scene 2 #################################################################
+    play music "audio/ratdee_theme.mp3" fadeout 1.0 fadein 1.0
+    scene bg bar with dissolve
+    show cat sad_animated at behind_bar_left_cat
     show ratdee normal at behind_bar_right_rat
     show bar
 
-    pause 3.0
-    r"That's rough, buddy."
+    r "Aye! I’m RatyDee, mice to meet you! Could I interest you in a friendly pun off?"
+
+    ## Menu 4
+    menu:
+        "Accept challenge.":
+            jump opt4_1
+        "Decline.":
+            jump opt4_2
+    label opt4_1:
+        python:
+            score = 0;
+        r "Awesome! Let the pun off begin!"
+        r "Are you Ready?"
+        centered "{b}{size=50}{color=#c8ae6e}Round 1{/color}{/size}{/b}"
+        r "You, my friend, look like something the cat dragged in."
+        python:
+            score -= 1
+
+        ## Submenu 4a
+        menu:
+            "\"You've cat to be kitten me right meow.\"":
+                jump opt4a_1
+            "\"You should paw-se before saying that.\"":
+                jump opt4a_2
+            "\"I couldn’t drag myself in.\" ":
+                jump opt4a_3
+        label opt4a_1:
+            c"You've cat to be kitten me right meow."
+            python:
+                score += 3
+            r "Aw, rats. Good comeback."
+            jump end4a
+        label opt4a_2:
+            c"You should paw-se before saying that."
+            python:
+                score += 1
+            r "Quit tea-sing."
+            jump end4a
+        label opt4a_3:
+            c"I couldn’t drag myself in."
+            r "Try again pipsqueak."
+            jump end4a
+        label end4a:
+
+        centered "{b}{size=50}{color=#c8ae6e}Round 2{/color}{/size}{/b}"
+        r"How are you feline?"
+        python:
+            score -= 1
+
+        ## Submenu 4b
+        menu:
+            "\"Purrty good!\"":
+                jump opt4b_1
+            "\"Kind of low.\"":
+                jump opt4b_2
+            "\"Feline fine!\" ":
+                jump opt4b_3
+        label opt4b_1:
+            c"Purrty good!"
+            python:
+                score += 1
+            r "It’s good cats always land on their feet!"
+            jump end4b
+        label opt4b_2:
+            c"Kind of low."
+            r "I’m afraid that joke fell flat."
+            jump end4b
+        label opt4b_3:
+            c"Feline fine!"
+            python:
+                score += 1
+            r "Don’t be a cheetah."
+            jump end4b
+        label end4b:
+
+        centered "{b}{size=50}{color=#c8ae6e}Round 3{/color}{/size}{/b}"
+
+        r "You know I’m quite famous for always mousin’ around."
+        python:
+            score -= 1
+
+        ## Submenu 4c
+        menu:
+            "\"I bet your very paw-pular with your puns.\"":
+                jump opt4c_1
+            "\"You’re hiss-terical!\"":
+                jump opt4c_2
+            "\"Is that so?\" ":
+                jump opt4c_3
+        label opt4c_1:
+            c"I bet your very paw-pular with your puns."
+            python:
+                score += 1
+            r "Cat's out of the bag."
+            jump end4c
+        label opt4c_2:
+            c"You’re hiss-terical!"
+            python:
+                score += 1
+            r "Cat's out of the bag."
+            jump end4c
+        label opt4c_3:
+            c"Is that so?"
+            r "Seems you’re having treble coming up with something."
+            jump end4c
+        label end4c:
+
+        if score <= 0:
+            centered "{b}{size=50}{color=#c8ae6e}You Lose{/color}{/size}{/b}"
+            r "Don't get your tail in a twist, it was still a great game!{w} Let’s play again sometime!"
+        else:
+            centered "{b}{size=50}{color=#c8ae6e}You Win!{/color}{/size}{/b}"
+            r "You’re really rat-ical. A purrfect pun off!"
+        python:
+            ratdee_friend = True
+        jump end4
+    label opt4_2:
+        jump end4
+    label end4:
+
+    if ratdee_friend:
+        "You befriended RatyDee!"
+    else:
+        show cat ugh at behind_bar_left_cat
+        "You did not make friends with RatyDee. :("
+
+    if smol_friend and ratdee_friend:
+        show cat happy_animated at behind_bar_left_cat
+        "Wow, you've got a bunch of new friends!"
+    else:
+        "This really isn't your day..."
 
     jump endscene

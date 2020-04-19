@@ -160,8 +160,9 @@ screen input(prompt):
             xpos gui.dialogue_xpos
             xsize gui.dialogue_width
             ypos gui.dialogue_ypos
+            yoffset -50
             text prompt style "input_prompt"
-            input id "input"
+            input id "input" color plum
 
 style input_prompt is default
 

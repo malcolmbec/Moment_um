@@ -14,11 +14,17 @@ define config.name = _("Moment...um...")
 define gui.show_name = True
 
 ## The version of the game.
-define config.version = "1.2"
+define config.version = "1.3"
 
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
-define gui.about = _p(""" ... """)
+define gui.about = _p("""
+Created for VGMC Jam 2020!\n
+Writing: Bec Raison\n
+Art: Gemhunter178\n
+Music: Elijah Green\n
+Programming: Becca Malcolm
+""")
 
 ## A short name for the game used for executables and directories in the built
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
@@ -43,7 +49,7 @@ define config.has_voice = False
 ## Uncomment the following line to set an audio file that will be played while
 ## the player is at the main menu. This file will continue playing into the
 ## game, until it is stopped or another file is played.
-define config.main_menu_music = "audio/title-theme.mp3"
+define config.main_menu_music = "audio/title_theme.mp3"
 
 ################################################################################
 ## Transitions

@@ -6,7 +6,7 @@ $ name = "Cat"
 
 define c = Character("[name]", who_color=plum)
 define b = Character("Barista", who_color=dark_venetian)
-define r = Character("Rat Dee", who_color=jazzberry_jam)
+define r = Character("RatyDee", who_color=jazzberry_jam)
 define s = Character("Smol Mouse", who_color=cosmic_cobalt)
 
 ################################################################################
@@ -22,7 +22,7 @@ image cat sad_animated:
 
 image cat happy_animated:
     "cat happy.png"
-    pause 1.0
+    pause 2.0
     "cat happy_blink.png"
     pause 1.0
     repeat
@@ -34,14 +34,14 @@ image cat glance_animated:
 
 image barista blink_animated:
     "barista eye_open.png"
-    pause 1.0
+    pause 2.0
     "barista blink.png"
     pause 0.3
     repeat
 
 image barista whoops_animated:
     "barista whoops.png"
-    pause 1.0
+    pause 2.0
     "barista whoops_blink.png"
     pause 0.3
     repeat
@@ -55,7 +55,7 @@ image ratdee animated:
 
 image ratdee gameless_animated:
     "ratdee gameless.png"
-    pause 1.0
+    pause 2.0
     "ratdee gameless_blink.png"
     pause 0.3
     repeat
@@ -69,14 +69,14 @@ image smol anger_animated:
 
 image smol pull_animated:
     "smol pull_normal.png"
-    pause 1.5
+    pause 2.0
     "smol pull_blink.png"
     pause 0.2
     repeat
 
 image smol pull anger_animated:
     "smol pull_anger.png"
-    pause 1.5
+    pause 2.0
     "smol pull_blink.png"
     pause 0.2
     repeat
@@ -139,9 +139,11 @@ transform rightish:
 
 # The game starts here.
 label start:
+    play music "audio/bar_theme.mp3" fadeout 1.0 fadein 1.0
     python:
         smol_friend = False
         ratdee_friend = False
+        pcount = 0
 
     scene bg bar
     show cat glance at behind_bar_left_cat
@@ -151,6 +153,7 @@ label start:
         name = renpy.input(_("What's your name?"))
         name = name.strip() or __("Cat")
 
+    play music "audio/barista_theme.mp3" fadeout 1.0 fadein 1.0
     show cat sad at behind_bar_left_cat
     show bar
     show barista friendly at right
