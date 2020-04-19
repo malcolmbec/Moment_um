@@ -19,11 +19,19 @@ transform behind_bar_right_smol:
     xalign 0.9
     yalign 0.65
 
-transform behind_bar_left:
+transform behind_bar_left_rat:
+    xalign 0.1
+    yalign 0.25
+
+transform behind_bar_right_rat:
+    xalign 0.9
+    yalign 0.25
+
+transform behind_bar_left_cat:
     xalign 0.1
     yalign 0.4
 
-transform behind_bar_right:
+transform behind_bar_right_cat:
     xalign 0.9
     yalign 0.4
 
@@ -38,8 +46,8 @@ transform rightish:
 # The game starts here.
 label start:
     scene bg bar
-    show cat sad at behind_bar_left
-    show rat dee at behind_bar_right
+    show cat sad at behind_bar_left_cat
+    show rat dee at behind_bar_right_rat
     show bar
 
     b"Welcome to <Bar Name>!"
