@@ -1,9 +1,10 @@
-
 ################################################################################
 ## Characters
 ################################################################################
 
-define c = Character("Cat", who_color=dark_venetian)
+$ name = "Cat"
+
+define c = Character("[name]", who_color=dark_venetian)
 define b = Character("Bartender", who_color=dark_venetian)
 define r = Character("Rat Dee", who_color=dark_venetian)
 define s = Character("Smol Mouse", who_color=dark_venetian)
@@ -14,7 +15,7 @@ define s = Character("Smol Mouse", who_color=dark_venetian)
 
 image cat sad animated:
     "cat sad.png"
-    pause 1.0
+    pause 2.0
     "cat blink.png"
     pause 0.3
     repeat
@@ -87,7 +88,7 @@ transform behind_bar_right_cat:
     xalign 0.9
     yalign 0.4
 
-transform rightish:
+transform leftish:
     xalign 0.25
     yalign 1.0
 
@@ -102,18 +103,28 @@ transform rightish:
 # The game starts here.
 label start:
     scene bg bar
-    show cat sad at behind_bar_left_cat
-    show smol meh at behind_bar_right_smol
+    show cat glance at behind_bar_left_cat
     show bar
-    #show bartender whoops animated at right
 
-    b"Welcome to <Bar Name>!"
+    python:
+        name = renpy.input(_("What's your name?"))
+        name = name.strip() or __("Cat")
 
-    jump scene1
-    label endscene1:
+    show bar
+    show bartender friendly at right
 
-    b"You chose [n]"
-    b"Once you add a story, pictures, and music, you can release it to the world!"
+    b"Hello [name]! Welcome to the cafe, can I help you?"
+    c"..."
+    b"I see.{w} Well, some might think you’re out of place here,{w} but I say the more the merrier!"
+    b"Don’t let others discourage you.{w} With some perseverance you’ll be able to befriend everyone here!"
+    b"In the meantime, if you want,{w} why don’t you start with getting some menu recommendations from our regulars?"
+    b"Normally I would help you in this area,{w} but since you want to make friends this a good starting point!"
+    b"Let me know how things go.{w} I’ll be cheering for you!"
+
+    jump dialogue
+    label endscene:
+
+    ## Credits???
 
     # This ends the game.
     return
