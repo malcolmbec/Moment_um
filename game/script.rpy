@@ -39,17 +39,17 @@ image cat glance animated:
     pause 1.0
     "cat glance.png"
 
-image bartender blink animated:
-    "bartender eye open.png"
+image barista blink animated:
+    "barista eye open.png"
     pause 1.0
-    "bartender blink.png"
+    "barista blink.png"
     pause 0.3
     repeat
 
-image bartender whoops animated:
-    "bartender whoops.png"
+image barista whoops animated:
+    "barista whoops.png"
     pause 1.0
-    "bartender whoops blink.png"
+    "barista whoops blink.png"
     pause 0.3
     repeat
 
@@ -155,7 +155,7 @@ label start:
         name = name.strip() or __("Cat")
 
     show bar
-    show bartender friendly at right
+    show barista friendly at right
 
     b"Hello [name]! Welcome to the cafe, can I help you?"
     c"..."
