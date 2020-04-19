@@ -25,7 +25,7 @@ define gold_fusion_light = '#c8ae6e'
 define gold_fusion_soft = '#e5d1a1'
 
 ## An accent color used throughout the interface to label and highlight text.
-define gui.accent_color = gold_fusion
+define gui.accent_color = gold_fusion_light
 
 ## The color used for a text button when it is neither selected nor hovered.
 define gui.idle_color = '#aaaaaa'
