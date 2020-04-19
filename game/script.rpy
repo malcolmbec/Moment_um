@@ -3,9 +3,9 @@
 ## Characters
 ################################################################################
 
-define p = Character("Player", who_color=blizzard_blue)
-define b = Character("Bartender", who_color=sunglow)
-define r = Character("Rat Dee", who_color=radical_red)
+define p = Character("Player", who_color=dark_venetian)
+define b = Character("Bartender", who_color=dark_venetian)
+define r = Character("Rat Dee", who_color=dark_venetian)
 
 ################################################################################
 ## Positions/Animations
@@ -30,7 +30,7 @@ label start:
     show bar
     show bartender friendly at rightish
 
-    b"You've created a new Ren'Py game."
+    b"Welcome to <Bar Name>!"
 
     jump scene1
     label endscene1:

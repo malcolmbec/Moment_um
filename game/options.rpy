@@ -7,11 +7,11 @@
 ## A human-readable name of the game. This is used to set the default window
 ## title, and shows up in the interface and error reports. The _() surrounding
 ## the string marks it as eligible for translation.
-define config.name = _("Moment...um")
+define config.name = _("Moment...um...")
 
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
-define gui.show_name = False
+define gui.show_name = True
 
 ## The version of the game.
 define config.version = "1.0"
@@ -114,7 +114,7 @@ define config.save_directory = "Moment_um-1587231671"
 ################################################################################
 
 ## The icon displayed on the taskbar or dock.
-define config.window_icon = "gui/window_icon.png"
+define config.window_icon = "images/cat sad.png"
 
 ################################################################################
 ## Build Configuration

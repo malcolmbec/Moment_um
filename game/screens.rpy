@@ -319,8 +319,8 @@ screen main_menu():
             text "[config.name!t]":
                 style "main_menu_title"
 
-            text "[config.version]":
-                style "main_menu_version"
+            #text "[config.version]":
+            #    style "main_menu_version"
 
 style main_menu_vbox is vbox
 style main_menu_text is gui_text
@@ -328,10 +328,9 @@ style main_menu_title is main_menu_text
 style main_menu_version is main_menu_text
 
 style main_menu_vbox:
-    xalign 1.0
+    xalign 0.25
     xoffset -30
-    xmaximum 1200
-    yalign 1.0
+    yalign 0.25
     yoffset -30
 
 style main_menu_text:

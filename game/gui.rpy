@@ -19,15 +19,13 @@ init python:
 ## The colors of text in the interface.
 
 ## Crayola Colors ##############################################################
-define radical_red = '#FF355E'
-define outrageous_orange = '#FF6037'
-define sunglow = '#FFCC33'
-define blizzard_blue = '#50BFE6'
-define razzle_dazzle_rose = '#EE34D2'
-define maximum_red = '#D92121'
+define dark_venetian = '#b33b24'
+define gold_fusion = '#85754e'
+define gold_fusion_light = '#c8ae6e'
+define gold_fusion_soft = '#e5d1a1'
 
 ## An accent color used throughout the interface to label and highlight text.
-define gui.accent_color = '#660066'
+define gui.accent_color = gold_fusion
 
 ## The color used for a text button when it is neither selected nor hovered.
 define gui.idle_color = '#aaaaaa'
@@ -37,7 +35,7 @@ define gui.idle_color = '#aaaaaa'
 define gui.idle_small_color = '#888888'
 
 ## The color that is used for buttons and bars that are hovered.
-define gui.hover_color = '#660066'
+define gui.hover_color = gold_fusion
 
 ## The color used for a text button when it is selected but not focused. A
 ## button is selected if it is the current screen or preference value.
@@ -48,8 +46,8 @@ define gui.insensitive_color = '#aaaaaa7f'
 
 ## Colors used for the portions of bars that are not filled in. These are not
 ## used directly, but are used when re-generating bar image files.
-define gui.muted_color = '#a366a3'
-define gui.hover_muted_color = '#c199c1'
+define gui.muted_color = gold_fusion_light
+define gui.hover_muted_color = gold_fusion_soft
 
 ## The colors used for dialogue and menu choice text.
 define gui.text_color = '#404040'
@@ -91,7 +89,7 @@ define gui.title_text_size = 75
 ################################################################################
 
 ## The images used for the main and game menus.
-define gui.main_menu_background = "images/main_menu.png"
+define gui.main_menu_background = "images/bg title closed.png"
 define gui.game_menu_background = "gui/game_menu.png"
 
 ################################################################################
