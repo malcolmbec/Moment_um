@@ -243,7 +243,7 @@ label dialogue:
         label end4a:
 
         centered "{b}{size=50}{color=#c8ae6e}Round 2{/color}{/size}{/b}"
-        r"How are you feline?"
+        r "How are you feline?"
         python:
             score -= 1
 
