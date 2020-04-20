@@ -22,43 +22,29 @@ label dialogue:
         "\"I’m trying to make friends.\" ":
             jump opt1_3
     label opt1_1:
-
         show smol anger_animated
-
         c"Well, I thought it seemed like a cool shop."
         s"Seems pretty fishy."
         c"I don’t know what you mean."
-
-
         s"Well… you’re a cat,{w} and most of us are mice."
         s"Really, you should just leave."
         jump end1
     label opt1_2:
-
         show smol anger_animated at behind_bar_right_smol_anger
-
         c"Do you have any drink recommendations?"
         s"Why do you want a drink recommendation from me?"
         c"I thought maybe you came here often."
-
-
         s"Because I’m a mouse?!"
-
         show cat nani at behind_bar_left_cat
-
         c"Oh, um, no! I just meant…"
         jump end1
     label opt1_3:
         c"I’m trying to make friends."
-
         show smol anger_animated at behind_bar_right_smol_anger
-
         s"But you’re a cat,{w} why would you try to make friends here?{w} Seems like you don’t belong here."
         c"Erm, I think maybe we could all learn to be friends?"
         s"Or maybe you’re hiding something!"
-
         show cat shock
-
         c"Uh, what?{w} No!"
         jump end1
     label end1:
@@ -73,38 +59,28 @@ label dialogue:
         "Ask about the usual regulars at the cafe.":
             jump opt2_2
     label opt2_1:
-
         show cat sad
-
         c"Are you here often?"
         s"What’s it to you?"
         c"You seem like you know this place well."
         s"So?"
         c"Uh…"
         s"Leave before I fight you!"
-
         show cat ugh
-
         "Oh that’s not good, maybe you should try something else."
         ## Submenu 2
         menu:
             "Ask something different.":
                 jump opt2_2
             "Maybe it’s best if I talk to someone else...":
-                jump end2
+                jump end3
     label opt2_2:
-
         show cat sad
-
         c"I’ve never been here before, but they seem busy."
         s"You seem too interested in the patrons."
-
         show cat suprise
-
         c"What, no, why?"
-
         show cat sad
-
         s"You’re a cat, maybe you’re up to something."
         c"I’m just trying to make some friends..."
         jump end2
@@ -132,30 +108,20 @@ label dialogue:
         "\"Are you okay?\"":
             jump opt3_3
     label opt3_1:
-
         show cat sad at behind_bar_left_cat
-
         c"I’ll try the black coffee then."
-
         show smol meh at behind_bar_right_smol_pull
-
         s"Wait, seriously? You’ll try even though you think it’s bitter?"
         c"Hm. Maybe I should suggest something you’d definitely enjoy then."
         "Seems the small mouse might be opening up!{w} Maybe you can be friends after all."
         jump end3
     label opt3_2:
         c"I’m not really a coffee drinker myself."
-
         show smol pfff at behind_bar_right_smol_anger
-
         s"Why would you come here then?"
-
         show cat ugh
-
         c"Well I mean, um, most cafes have other things too."
-
         show smol anger_animated at behind_bar_right_smol_anger
-
         s"That makes no sense, it’s a coffee shop, if you’re not going to drink coffee, you should leave."
         ## Submenu 3
         menu:
@@ -165,20 +131,14 @@ label dialogue:
                 jump end3
     label opt3_3:
         c"Are you okay?"
-
         show smol pull_animated at behind_bar_right_smol_pull
-
         s"You’re right, I don’t even like coffee."
         c"Why are you drinking it then?"
         s"Because I thought the caffeine would help me."
-
         show cat wink
-
         c"Let’s try something new together instead."
         s"I can’t believe you’re being nice to me after all the mean things I’ve said."
-
         show cat happy
-
         "See, all the mouse needed was a friend."
         python:
             smol_friend = True
@@ -327,6 +287,8 @@ label dialogue:
     if smol_friend and ratdee_friend:
         show cat happy_animated at behind_bar_left_cat
         "Wow, you've got a bunch of new friends!"
+    elif smol_friend or ratdee_friend:
+        "Well, at least we have one new friend..."
     else:
         "This really isn't your day..."
 
